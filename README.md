@@ -16,13 +16,14 @@ Este proyecto implementa un servicio REST en Java utilizando Spring Boot para el
 1.  Clonar el Repositorio
 
 
-    `git clone https://github.com/Ripdiegozz/ParametaTechTest.git
-    cd ParametaTechTest`
+    `git clone https://github.com/Ripdiegozz/ParametaTechTest.git`
+    
+    `cd ParametaTechTest`
 
-2.  Configuración de la Base de Datos
+3.  Configuración de la Base de Datos
 
     -   Cree una base de datos MySQL y configure las credenciales en el archivo `application.properties` en `src/main/resources`.
-3.  Compilación y Ejecución
+4.  Compilación y Ejecución
 
 	`mvn install`
 	
