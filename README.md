@@ -57,6 +57,24 @@ Para integrar el servicio web SOAP para el almacenamiento de datos, se realiza a
 
 Si desea verificar el archivo WSDL del servicio SOAP puede hacerlo mediante la URL: http://localhost:8080/ws/empleados.wsdl
 
+# Pruebas Unitarias
+
+Se han desarrollado pruebas unitarias para asegurar el correcto funcionamiento de las diferentes partes del servicio. Estas pruebas cubren los controladores, repositorios y utilidades del proyecto.
+
+### Pruebas para Controladores
+
+Se han creado pruebas para el controlador `EmpleadoController` para verificar el manejo adecuado de las solicitudes REST.
+
+### Pruebas para Repositorios
+
+También se han creado pruebas para el repositorio `EmpleadoRepository` para asegurar que las consultas a la base de datos se realicen correctamente.
+
+### Pruebas para Utilidades
+
+Se han desarrollado pruebas para la utilidad `EmpleadoConverter` para garantizar la correcta conversión entre objetos `Empleado` y `EmpleadoModel`.
+
+Puedes ejecutar todas estas pruebas utilizando la herramienta de construcción Maven con el siguiente comando: `mvn test`
+
 # Notas Adicionales
 -----------------
 

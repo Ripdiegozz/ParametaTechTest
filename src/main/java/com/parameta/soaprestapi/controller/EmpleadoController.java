@@ -65,9 +65,15 @@ public class EmpleadoController {
 			LocalDate fechaNacimiento = LocalDate.parse(fechaNacimientoStr);
 			LocalDate fechaVinculacion = LocalDate.parse(fechaVinculacionStr);
 
-			// Validar que el empleado sea mayor de edad
+			// Now
 			LocalDate fechaActual = LocalDate.now();
 
+			// Validar que cualquier fecha no sea mayor a la fecha actual
+			if (fechaNacimiento.isAfter(fechaActual) || fechaVinculacion.isAfter(fechaActual)) {
+				return ResponseEntity.badRequest().body("Las fechas no pueden ser mayores a la fecha actual.");
+			}
+			
+			// Validar que el empleado sea mayor de edad
 			Period edad = Period.between(fechaNacimiento, fechaActual);
 
 			if (edad.getYears() < 18) {
