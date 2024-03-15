@@ -1,5 +1,7 @@
 package com.parameta.soaprestapi.model;
 
+import java.util.Date;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,15 +21,15 @@ public class EmpleadoModel {
     private String apellidos;
     private String tipoDocumento;
     private String numeroDocumento;
-    private String fechaNacimiento;
-    private String fechaVinculacion;
+    private Date fechaNacimiento;
+    private Date fechaVinculacion;
     private String cargo;
     private Double salario;
 
     public EmpleadoModel() {
     }
 
-    public EmpleadoModel(Long id, String nombres, String apellidos, String tipoDocumento, String numeroDocumento, String fechaNacimiento, String fechaVinculacion, String cargo, Double salario) {
+    public EmpleadoModel(Long id, String nombres, String apellidos, String tipoDocumento, String numeroDocumento, Date fechaNacimiento, Date fechaVinculacion, String cargo, Double salario) {
         this.id = id;
         this.nombres = nombres;
         this.apellidos = apellidos;
@@ -59,11 +61,11 @@ public class EmpleadoModel {
         this.numeroDocumento = numeroDocumento;
     }
 
-    public void setFechaNacimiento(String fechaNacimiento) {
+    public void setFechaNacimiento(Date fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public void setFechaVinculacion(String fechaVinculacion) {
+    public void setFechaVinculacion(Date fechaVinculacion) {
         this.fechaVinculacion = fechaVinculacion;
     }
 
@@ -75,7 +77,43 @@ public class EmpleadoModel {
         this.salario = salario;
     }
 
-    @Override
+    public Long getId() {
+		return id;
+	}
+
+	public String getNombres() {
+		return nombres;
+	}
+
+	public String getApellidos() {
+		return apellidos;
+	}
+
+	public String getTipoDocumento() {
+		return tipoDocumento;
+	}
+
+	public String getNumeroDocumento() {
+		return numeroDocumento;
+	}
+
+	public Date getFechaNacimiento() {
+		return fechaNacimiento;
+	}
+
+	public Date getFechaVinculacion() {
+		return fechaVinculacion;
+	}
+
+	public String getCargo() {
+		return cargo;
+	}
+
+	public Double getSalario() {
+		return salario;
+	}
+
+	@Override
     public String toString() {
         return "Empleado{" + "id=" + id + ", nombres=" + nombres + ", apellidos=" + apellidos + ", tipoDocumento=" + tipoDocumento + ", numeroDocumento=" + numeroDocumento + ", fechaNacimiento=" + fechaNacimiento + ", fechaVinculacion=" + fechaVinculacion + ", cargo=" + cargo + ", salario=" + salario + '}';
     }

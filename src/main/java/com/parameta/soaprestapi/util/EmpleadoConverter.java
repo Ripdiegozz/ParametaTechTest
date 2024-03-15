@@ -23,9 +23,9 @@ public class EmpleadoConverter {
         empleadoModel.setTipoDocumento(empleado.getTipoDocumento());
         empleadoModel.setNumeroDocumento(empleado.getNumeroDocumento());
 
-        // Convert XMLGregorianCalendar to String
-        empleadoModel.setFechaNacimiento(empleado.getFechaNacimiento().toString());
-        empleadoModel.setFechaVinculacion(empleado.getFechaVinculacion().toString());
+        // Convert XMLGregorianCalendar to Date
+        empleadoModel.setFechaNacimiento(empleado.getFechaNacimiento().toGregorianCalendar().getTime());
+        empleadoModel.setFechaVinculacion(empleado.getFechaVinculacion().toGregorianCalendar().getTime());
         empleadoModel.setCargo(empleado.getCargo());
         empleadoModel.setSalario(empleado.getSalario());
 
@@ -43,9 +43,10 @@ public class EmpleadoConverter {
         empleado.setCargo(empleadoModel.getCargo());
         empleado.setSalario(empleadoModel.getSalario());
 
+        
         try {
-            empleado.setFechaNacimiento(convertStringToXMLGregorianCalendar(empleadoModel.getFechaNacimiento()));
-            empleado.setFechaVinculacion(convertStringToXMLGregorianCalendar(empleadoModel.getFechaVinculacion()));
+            empleado.setFechaNacimiento(convertStringToXMLGregorianCalendar(empleadoModel.getFechaNacimiento().toString()));
+            empleado.setFechaVinculacion(convertStringToXMLGregorianCalendar(empleadoModel.getFechaVinculacion().toString()));
         } catch (ParseException | DatatypeConfigurationException | java.text.ParseException e) {
             // Handle the exception or log an error
             e.printStackTrace();
